@@ -40,12 +40,12 @@ for frame in camera.capture_continuous(raw_capture, format="bgr", use_video_port
         if area < 100:
             continue
         try:
-#             (x,y),radius = cv.minEnclosingCircle(contour)
-#             center = (int(x),int(y))
-#             radius = int(radius)
-#             cv.circle(image,center,radius,color=(255, 0, 0))            
-            ellipse = cv.fitEllipse(contour)
-            cv.ellipse(image, box=ellipse, color=(0, 255, 0))         
+            (x,y),radius = cv.minEnclosingCircle(contour)
+            center = (int(x),int(y))
+            radius = int(radius)
+            cv.circle(image,center,radius,color=(255, 0, 0))            
+#             ellipse = cv.fitEllipse(contour)
+#             cv.ellipse(image, box=ellipse, color=(0, 255, 0))         
         except:
             pass
         arr = [area, datetime.datetime.now()]
